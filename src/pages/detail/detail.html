@@ -49,14 +49,16 @@
       <p [innerHtml]="comment.content.rendered"></p>
     </ion-list>
   </div>
-  <!-- <div *ngIf="isLoading"  text-center padding>
-    <ion-spinner></ion-spinner>
-  </div>
-  <button *ngIf="showMore" ion-button full (click)="getHeaders()">Load more...</button> -->
-    
-  <ion-infinite-scroll (ionInfinite)="getComments($event)">
+  <div *ngIf="isLoading&&page==1"  text-center padding>
+    <ion-infinite-scroll (ionInfinite)="getComments($event)">
     <ion-infinite-scroll-content></ion-infinite-scroll-content>
   </ion-infinite-scroll>
+</div>
   </ion-content>
+    <!-- <ion-spinner></ion-spinner> -->
+  
+  <!-- <button *ngIf="showMore" ion-button full (click)="getHeaders()">Load more...</button> -->
+    
+  
    
   

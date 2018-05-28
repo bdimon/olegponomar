@@ -30,7 +30,7 @@ export class DetailPage {
     // this.getStatus();
     }
     
-  ionViewWillEnter() {
+  ionViewDidLoad() {
     
     this.getComments();
     }
@@ -75,6 +75,7 @@ export class DetailPage {
       //     }
           if (infiniteScroll!=null){
             infiniteScroll.complete();
+             this.isLoading = true;
           }
       
     }, (error) => {
@@ -83,5 +84,6 @@ export class DetailPage {
       console.log('error');
     });
   }
+  this.isLoading = true;
   }
 }
