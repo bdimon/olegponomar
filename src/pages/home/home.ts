@@ -33,7 +33,7 @@ export class HomePage {
       if(infiniteScroll!=null && infiniteScroll.ionRefresh) {
         this.page=1;
       }
-      let url:string='post?_embed&page='+this.page;
+      let url:string='posts?_embed&page='+this.page;
       url+=this.category_id!=0? '&categories='+this.category_id: '';
       url+=this.sort=='1'? '&order=asc':this.sort=='2' ? '&orderby=title&order=asc':this.sort=='3' ? '&orderby=title&order=desc': '';
     this.api.get(url)

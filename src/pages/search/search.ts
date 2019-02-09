@@ -19,7 +19,7 @@ export class SearchPage {
   public items: any = [];
   private per_page: number= 5;
   private page: number=1;
-  private showMore:boolean = false;
+  // private showMore:boolean = false;
   private isLoading:boolean = false;
   searchQuery:string='';
 
@@ -39,15 +39,15 @@ export class SearchPage {
       this.isLoading=false;
       this.items = this.items.concat(data);
       if(data.length===this.per_page){
-        this.showMore=true;
+        // this.showMore=true;
         this.page++;
       }else{
-        this.showMore=false;
+        // this.showMore=false;
       }
     }, (error) => {
       this.isLoading=false;
       if(error.error.code==='rest_post_invalid_page_number') {
-        this.showMore=false;
+        // this.showMore=false;
       }
       
       console.log(error);
@@ -63,7 +63,7 @@ export class SearchPage {
     this.searchQuery = '';
     this.items = [];
     this.page = 1;
-    this.showMore = false;
+    // this.showMore = false;
   }
   openDetail(item) {
     this.navCtrl.push(DetailPage, {post:item})
